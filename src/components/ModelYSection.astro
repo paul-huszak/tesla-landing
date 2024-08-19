@@ -1,0 +1,44 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+  color="black"
+  title="Model Y"
+  subtitle="Precio con la aplicación de los programas Tesla Boost e incentivos de movilidad eléctrica"
+  sup="1"
+  price="Desde 29.990 €"
+>
+  <div slot="footer" class="flex flex-col pt-20">
+    <div class="flex flex-row gap-x-6 w-2/5 mx-auto">
+      <a
+        class="bg-black w-1/2 text-sm font-medium rounded px-12 py-2 text-white inline-block hover:bg-zinc-800 transition-colors duration-300"
+        href="#"
+      >
+        Encargar
+      </a>
+
+      <a
+        class="bg-white w-1/2 text-sm font-medium rounded px-12 py-2 text-black inline-block hover:bg-zinc-200 transition-all duration-300"
+        href="#"
+      >
+        Prueba de conducción
+      </a>
+    </div>
+    <div class="flex flex-col mx-auto pt-6">
+      <a
+        class="text-black text-[0.75rem] underline underline-offset-2 hover:font-semibold transition-all duration-200"
+        href="#"
+      >
+        Disponible con Moves III
+      </a>
+    </div>
+  </div>
+
+  <img
+    slot="background"
+    src="/model-y.avif"
+    alt="Model Y"
+    class="h-full w-full object-cover object-center"
+  />
+</Section>

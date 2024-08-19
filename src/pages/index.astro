@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ModelY from "../components/ModelYSection.astro";
+import Model3 from "../components/Model3Section.astro";
+import ModelS from "../components/ModelSSection.astro";
+import ModelX from "../components/ModelXSection.astro";
+import SolarPanel from "../components/SolarPanelSection.astro";
+import Accesorios from "../components/AccesoriosSection.astro";
+import InfoSection from "../components/InfoSection.astro";
+import LandingFooter from "../components/LandingFooter.astro";
+---
+
+<Layout title="Tesla - Home">
+  <LandingHeader />
+
+  <main
+    class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth"
+  >
+    <div class="snap-center">
+      <HeroSection />
+    </div>
+    <div class="snap-center">
+      <ModelY />
+    </div>
+    <div class="snap-center">
+      <Model3 />
+    </div>
+    <div class="snap-center">
+      <ModelS />
+    </div>
+    <div class="snap-center">
+      <ModelX />
+    </div>
+    <div class="snap-center">
+      <SolarPanel />
+    </div>
+    <div class="snap-center">
+      <Accesorios />
+    </div>
+    <div class="snap-center">
+      <InfoSection />
+      <LandingFooter />
+    </div>
+  </main>
+</Layout>
