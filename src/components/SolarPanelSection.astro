@@ -2,9 +2,16 @@
 import Section from "./Section.astro";
 ---
 
-<Section color="black" title="Solar y Powerwall">
-  <div slot="footer" class="flex flex-col pt-20">
-    <div class="flex flex-row gap-x-6 w-1/6 mx-auto">
+<Section
+  color="black"
+  title="Solar y Powerwall"
+  subtitle="Energía para todos"
+  id="energia"
+>
+  <div slot="footer" class="flex flex-col max-sm:pb-10 pt-20">
+    <div
+      class="flex max-sm:flex-col flex-row max-sm:px-6 max-sm:w-full w-1/4 xl:w-1/6 mx-auto"
+    >
       <a
         class="bg-black text-sm w-full font-medium rounded px-12 py-2 text-white inline-block hover:bg-zinc-800 transition-colors duration-300"
         href="#"
@@ -19,5 +26,26 @@ import Section from "./Section.astro";
     src="/solar-panel.avif"
     alt="Solar y Powerwall"
     class="h-full w-full object-cover object-center"
+    id="bg-image-solarpanel"
   />
+
+  <script>
+    function isMobile() {
+      if (window.matchMedia("(max-width: 639px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    let imageElement = document.querySelector(
+      "#bg-image-solarpanel"
+    ) as HTMLImageElement; // TypeScript
+
+    if (isMobile()) {
+      imageElement.src = "solar-panel-mobile.avif";
+    } else {
+      imageElement.src = "solar-panel.avif";
+    }
+  </script>
 </Section>

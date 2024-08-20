@@ -1,43 +1,161 @@
 ---
 import Logo from "./Logo.astro";
+import Support from "./Support.astro";
+import Language from "./Language.astro";
+import Account from "./Account.astro";
 ---
 
 <header
   id="landing-header"
-  class="py-4 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+  class="max-sm:py-3 max-sm:px-4 py-4 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
 >
   <div class="flex flex-grow basis-0">
-    <Logo />
+    <a href="./"><Logo /></a>
   </div>
-  <nav>
+  <nav class="max-xl:hidden">
     <ul
       class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
-      <li><a href="#">Model S</a></li>
-      <li><a href="#">Model 3</a></li>
-      <li><a href="#">Model X</a></li>
-      <li><a href="#">Model Y</a></li>
-      <li><a href="#">Energía</a></li>
-      <li><a href="#">Accesorios</a></li>
+      <li>
+        <a href="#model-s" class="scroll-link" data-target="model-s">Model S</a>
+      </li>
+      <li>
+        <a href="#model-3" class="scroll-link" data-target="model-3">Model 3</a>
+      </li>
+      <li>
+        <a href="#model-x" class="scroll-link" data-target="model-x">Model X</a>
+      </li>
+      <li>
+        <a href="#model-y" class="scroll-link" data-target="model-y">Model Y</a>
+      </li>
+      <li>
+        <a href="#energia" class="scroll-link" data-target="energia">Energía</a>
+      </li>
+      <li>
+        <a href="#accesorios" class="scroll-link" data-target="accesorios"
+          >Accesorios</a
+        >
+      </li>
     </ul>
   </nav>
 
   <nav class="flex flex-grow basis-0 justify-end">
-    <ul
-      class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
-    >
-      <li><a href="#">Soporte</a></li>
-      <li><a href="#">Tienda</a></li>
-      <li><a href="#">Cuenta</a></li>
-      <li><a href="#">Menú</a></li>
+    <!-- <ul
+      class="flex text-md gap-x-6 [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:px-4 [&>li>a]:py-2"
+    > -->
+    <ul class="flex text-lg gap-x-2 px-4 py-2">
+      <li class="p-1 hidden xl:block sm:hidden">
+        <a class="object-contain" href="#support"><Support /></a>
+      </li>
+      <li class="p-1 hidden xl:block sm:hidden">
+        <a class="object-contain" href="#language"><Language /></a>
+      </li>
+      <li class="p-1 hidden xl:block sm:hidden">
+        <a class="object-contain" href="#account"><Account /></a>
+      </li>
+      <li
+        class="xl:hidden backdrop-blur-md px-4 py-2 transition-colors duration-300 font-medium bg-gray-300 bg-opacity-35 rounded shadow-sm"
+      >
+        <a id="menu-btn" href="#">Menú</a>
+      </li>
     </ul>
   </nav>
+
+  <!-- <nav
+    id="modal-menu"
+    class="xl:hidden flex flex-col bg-white fixed top-0 left-0 right-0 bottom-0"
+  >
+    <button id="close-btn" class="w-screen flex justify-end p-5">
+      <img class="text-black h-6" src="/close-icon.svg" alt="Close Icon" />
+    </button>
+    <ul
+      class="flex flex-col mt-4 [&>li>a]:transition-colors [&>li]:m-3 [&>li>a]:justify-between [&>li>a]:duration-200 [&>li>a]:text-black [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-6 [&>li>a]:py-3 [&>li>a]:rounded-md [&>li>a]:w-full"
+    >
+      <li>
+        <a class="hover:bg-slate-100" href="#home"
+          >Home<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#model-s"
+          >Model S<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#model-3"
+          >Model 3<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#model-x"
+          >Model X<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#model-y"
+          >Model Y<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#energia"
+          >Energía<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#accesorios"
+          >Carga<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+    </ul>
+  </nav> -->
 
   <div
     id="menu-backdrop"
     class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10`}
   >
   </div>
+
+  <!-- <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const modalMenu = document.querySelector("#modal-menu");
+    const menuItems = modalMenu.querySelectorAll("li>a ");
+    const closeBtn = document.querySelector("#close-btn");
+
+    function toggleDropdownMenu() {
+      modalMenu.classList.toggle("hidden");
+    }
+
+    menuBtn.addEventListener("click", toggleDropdownMenu);
+
+    closeBtn.addEventListener("click", toggleDropdownMenu);
+
+    menuItems.forEach((Item) => {
+      Item.addEventListener("click", toggleDropdownMenu);
+    });
+  </script> -->
+
+  <script>
+    // Get all elements with the class 'scroll-link'
+    const scrollLinks = document.querySelectorAll(".scroll-link");
+
+    // Add click event listener to each scroll link
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Get the target ID from the data-target attribute
+        const targetId = this.getAttribute("data-target");
+        const element = document.getElementById(targetId);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  </script>
 
   <script>
     const $menuBackdrop = document.querySelector(
