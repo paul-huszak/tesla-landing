@@ -11,7 +11,7 @@ const textColor = `text-${color}`;
   <div class="z-30 relative h-full flex flex-col">
     <header>
       <h2
-        class={`${textColor} pt-[7.5rem] max-sm:text-[28px] text-[40px] font-medium`}
+        class={`${textColor}  max-sm:pt-[5.5rem] pt-[7.5rem] max-sm:text-[28px] text-[40px] font-medium`}
       >
         {title}
       </h2>
@@ -23,7 +23,9 @@ const textColor = `text-${color}`;
       </p>
     </header>
 
-    <footer class="flex flex-col flex-grow justify-end max-sm:pb-10 pb-20">
+    <footer
+      class="flex flex-col flex-grow justify-end max-sm:pb-16 max-lg:pb-28 pb-20"
+    >
       <slot name="footer" />
     </footer>
   </div>
