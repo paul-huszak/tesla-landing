@@ -22,5 +22,29 @@ import Section from "@/components/sections/Section.astro";
     autoplay
     muted
     loop
-    src="/video.webm"></video>
+    playsinline
+    id="bg-video-herosection"
+  >
+    <source src="/video.webm" type="video/webm" />
+  </video>
+
+  <script>
+    function isMobile() {
+      if (window.matchMedia("(max-width: 639px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    let videoElement = document.querySelector(
+      "#bg-video-herosection"
+    ) as HTMLVideoElement; // TypeScript
+
+    if (isMobile()) {
+      videoElement.src = "video-mobile.mp4";
+    } else {
+      videoElement.src = "video.webm";
+    }
+  </script>
 </Section>
