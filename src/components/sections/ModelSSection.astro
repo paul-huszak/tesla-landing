@@ -1,16 +1,9 @@
 ---
-import Section from "./Section.astro";
+import Section from "@/components/sections/Section.astro";
 ---
 
-<Section
-  color="black"
-  title="Model Y"
-  subtitle="Precio con la aplicación de los programas Tesla Boost e incentivos de movilidad eléctrica"
-  sup="1"
-  price="Desde 29.990 €"
-  id="model-y"
->
-  <div slot="footer" class="flex flex-col pt-20">
+<Section color="white" title="Model S" id="model-s">
+  <div slot="footer" class="flex flex-col max-sm:pb-10 pt-20">
     <div
       class="flex max-sm:flex-col flex-row max-sm:gap-y-4 gap-x-6 max-sm:px-6 max-sm:w-full w-3/5 xl:w-2/5 mx-auto"
     >
@@ -28,22 +21,14 @@ import Section from "./Section.astro";
         Prueba de conducción
       </a>
     </div>
-    <div class="flex flex-col mx-auto pt-6">
-      <a
-        class="text-black text-[0.75rem] underline underline-offset-2 hover:font-semibold transition-all duration-200"
-        href="#"
-      >
-        Disponible con Moves III
-      </a>
-    </div>
   </div>
 
   <img
     slot="background"
-    src="/model-y.avif"
-    alt="Model Y"
+    src="/model-s.avif"
+    alt="Model S"
     class="h-full w-full object-cover object-center"
-    id="bg-image-modely"
+    id="bg-image-models"
   />
 
   <script>
@@ -56,13 +41,13 @@ import Section from "./Section.astro";
     }
 
     let imageElement = document.querySelector(
-      "#bg-image-modely"
+      "#bg-image-models"
     ) as HTMLImageElement; // TypeScript
 
     if (isMobile()) {
-      imageElement.src = "model-y-mobile.avif";
+      imageElement.src = "model-s-mobile.avif";
     } else {
-      imageElement.src = "model-y.avif";
+      imageElement.src = "model-s.avif";
     }
   </script>
 </Section>

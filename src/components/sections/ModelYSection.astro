@@ -1,14 +1,14 @@
 ---
-import Section from "./Section.astro";
+import Section from "@/components/sections/Section.astro";
 ---
 
 <Section
   color="black"
-  title="Model 3"
+  title="Model Y"
   subtitle="Precio con la aplicación de los programas Tesla Boost e incentivos de movilidad eléctrica"
   sup="1"
-  price="Desde 26.990 €"
-  id="model-3"
+  price="Desde 29.990 €"
+  id="model-y"
 >
   <div slot="footer" class="flex flex-col pt-20">
     <div
@@ -30,7 +30,7 @@ import Section from "./Section.astro";
     </div>
     <div class="flex flex-col mx-auto pt-6">
       <a
-        class="text-white text-[0.75rem] underline underline-offset-2 hover:font-semibold transition-all duration-200"
+        class="text-black text-[0.75rem] underline underline-offset-2 hover:font-semibold transition-all duration-200"
         href="#"
       >
         Disponible con Moves III
@@ -40,10 +40,10 @@ import Section from "./Section.astro";
 
   <img
     slot="background"
-    src="/model-3.avif"
-    alt="Model 3"
+    src="/model-y.avif"
+    alt="Model Y"
     class="h-full w-full object-cover object-center"
-    id="bg-image-model3"
+    id="bg-image-modely"
   />
 
   <script>
@@ -56,13 +56,13 @@ import Section from "./Section.astro";
     }
 
     let imageElement = document.querySelector(
-      "#bg-image-model3"
+      "#bg-image-modely"
     ) as HTMLImageElement; // TypeScript
 
     if (isMobile()) {
-      imageElement.src = "model-3-mobile.avif";
+      imageElement.src = "model-y-mobile.avif";
     } else {
-      imageElement.src = "model-3.avif";
+      imageElement.src = "model-y.avif";
     }
   </script>
 </Section>
