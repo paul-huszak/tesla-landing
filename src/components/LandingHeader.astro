@@ -3,6 +3,8 @@ import Logo from "./Logo.astro";
 import Support from "./Support.astro";
 import Language from "./Language.astro";
 import Account from "./Account.astro";
+import ArrowIcon from "./ArrowIcon.astro";
+import CloseIcon from "./CloseIcon.astro";
 ---
 
 <header
@@ -40,10 +42,7 @@ import Account from "./Account.astro";
   </nav>
 
   <nav class="flex flex-grow basis-0 justify-end">
-    <!-- <ul
-      class="flex text-md gap-x-6 [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:px-4 [&>li>a]:py-2"
-    > -->
-    <ul class="flex text-lg gap-x-2 px-4 py-2">
+    <ul class="flex text-lg gap-x-2">
       <li class="p-1 hidden xl:block sm:hidden">
         <a class="object-contain" href="#support"><Support /></a>
       </li>
@@ -54,85 +53,137 @@ import Account from "./Account.astro";
         <a class="object-contain" href="#account"><Account /></a>
       </li>
       <li
-        class="xl:hidden backdrop-blur-md px-4 py-2 transition-colors duration-300 font-medium bg-gray-300 bg-opacity-35 rounded shadow-sm"
+        class="xl:hidden backdrop-blur-md px-4 py-2 transition-colors duration-300 text-sm text-current font-medium bg-gray-300 bg-opacity-35 rounded shadow-sm"
       >
         <a id="menu-btn" href="#">Menú</a>
       </li>
     </ul>
   </nav>
 
-  <!-- <nav
+  <nav
     id="modal-menu"
     class="xl:hidden flex flex-col bg-white fixed top-0 left-0 right-0 bottom-0"
   >
-    <button id="close-btn" class="w-screen flex justify-end p-5">
-      <img class="text-black h-6" src="/close-icon.svg" alt="Close Icon" />
+    <button id="close-btn" class="w-screen flex justify-end p-6">
+      <CloseIcon />
     </button>
     <ul
-      class="flex flex-col mt-4 [&>li>a]:transition-colors [&>li]:m-3 [&>li>a]:justify-between [&>li>a]:duration-200 [&>li>a]:text-black [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-6 [&>li>a]:py-3 [&>li>a]:rounded-md [&>li>a]:w-full"
+      class="flex flex-col mt-4 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:text-lg [&>li>a]:transition-colors [&>li]:m-3 [&>li>a]:justify-between [&>li>a]:duration-200 [&>li>a]:text-black [&>li>a]:font-semibold [&>li>a]:pl-5 [&>li>a]:pr-3 [&>li>a]:py-3 [&>li>a]:rounded-md [&>li>a]:w-full"
     >
       <li>
-        <a class="hover:bg-slate-100" href="#home"
-          >Home<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#model-s"
+          ><p>Model S</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#model-s"
-          >Model S<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#model-3"
+          ><p>Model 3</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#model-3"
-          >Model 3<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#model-x"
+          ><p>Model X</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#model-x"
-          >Model X<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#model-y"
+          ><p>Model Y</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#model-y"
-          >Model Y<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#energia"
+          ><p>Energía</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#energia"
-          >Energía<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#accesorios"
+          ><p>Accesorios</p><ArrowIcon /></a
         >
       </li>
       <li>
-        <a class="hover:bg-slate-100" href="#accesorios"
-          >Carga<img class="h-5" alt="Arrow Icon" src="/arrow-icon.svg" /></a
+        <a class="flex flex-row justify-between items-center" href="#"
+          ><p>Soporte</p></a
+        >
+      </li>
+      <li>
+        <a class="flex flex-row justify-between items-center" href="#language">
+          <span class="flex justify-start items-center gap-3">
+            <Language />
+            <span class="flex flex-col">
+              <p>España</p>
+              <h4 class="text-sm font-normal text-gray-500">español</h4>
+            </span>
+          </span>
+          <ArrowIcon /></a
+        >
+      </li>
+      <li>
+        <a class="flex flex-row justify-between items-center" href="#account">
+          <span class="flex justify-start items-center gap-3">
+            <Account />
+            <span class="flex flex-col">
+              <p>Cuenta</p>
+            </span>
+          </span>
+          <ArrowIcon /></a
         >
       </li>
     </ul>
-  </nav> -->
+  </nav>
 
   <div
     id="menu-backdrop"
-    class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10`}
+    class={`max-lg:hidden absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10`}
   >
   </div>
 
-  <!-- <script>
+  <style>
+    /* Initial state of the modal */
+    #modal-menu {
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      /* Other styles */
+      background-color: white; /* Ensure background color to avoid transparency issues */
+    }
+
+    /* State when the modal is visible */
+    #modal-menu.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Optional: You might want to ensure the modal takes up the full viewport */
+    #modal-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000; /* Ensure it appears on top of other content */
+    }
+  </style>
+
+  <script>
     const menuBtn = document.getElementById("menu-btn");
     const modalMenu = document.querySelector("#modal-menu");
-    const menuItems = modalMenu.querySelectorAll("li>a ");
+    const menuItems = modalMenu.querySelectorAll("li > a");
     const closeBtn = document.querySelector("#close-btn");
 
     function toggleDropdownMenu() {
-      modalMenu.classList.toggle("hidden");
+      // Toggle the 'show' class to control visibility and opacity
+      modalMenu.classList.toggle("show");
     }
 
     menuBtn.addEventListener("click", toggleDropdownMenu);
-
     closeBtn.addEventListener("click", toggleDropdownMenu);
 
-    menuItems.forEach((Item) => {
-      Item.addEventListener("click", toggleDropdownMenu);
+    menuItems.forEach((item) => {
+      item.addEventListener("click", toggleDropdownMenu);
     });
-  </script> -->
+  </script>
 
   <script>
     // Get all elements with the class 'scroll-link'
